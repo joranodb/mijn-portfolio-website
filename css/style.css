@@ -1,11 +1,11 @@
-/* ====== style.css ====== */
+
 @import url('reset.css');
 @import url('fonts.css');
 
 :root {
-  --color-bg: #000000;    /* black */
-  --color-accent: #E8C547;/* gold */
-  --color-text: #8A1C1C;  /* dark red */
+  --color-bg: #000000;    /
+  --color-accent: #E8C547;
+  --color-text: #8A1C1C;
   --color-surface: #0f0f0f;
 }
 
@@ -128,27 +128,27 @@ footer a {
 }
 label { color: var(--color-accent); font-weight: 600; }
 
-/* Accessibility contrast helpers */
+
 hr.separator { border-top: 1px dashed rgba(232,197,71,0.35); }
 
-/* Utilities */
+
 .rounded-xl { border-radius: 1rem; }
 .shadow-soft { box-shadow: 0 4px 40px rgba(0,0,0,.35); }
 
-/* Layout: full-height pages and responsive fit */
+
 html, body { height: 100%; }
 body { display: flex; flex-direction: column; }
 main { flex: 1 0 auto; }
 footer.footer { flex-shrink: 0; }
 
-/* Fullscreen hero */
+
 .hero .row { min-height: 70vh; }
 @media (min-width: 992px) {
   .hero .row { min-height: 80vh; }
 }
 img.rounded-xl { width: 100%; height: auto; }
 
-/* Prevent unwanted horizontal scroll */
+
 .container, .container-narrow { padding-left: 1rem; padding-right: 1rem; }
 
 .project-layout { flex-wrap: wrap; }
