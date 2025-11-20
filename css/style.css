@@ -3,10 +3,11 @@
 @import url('fonts.css');
 
 :root {
-  --color-bg: #000000;    /
+  --color-bg: #000000;    
   --color-accent: #E8C547;
-  --color-text: #8A1C1C;
-  --color-surface: #0f0f0f;
+  --color-text: #8A1C1C;  
+  --color-bg: #000000;    /
+ 
 }
 
 body {
