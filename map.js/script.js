@@ -1,86 +1,69 @@
-const GH_BASE = 'https://github.com/joranodb/mijn-portfolio-website/blob/main';
-(function() {
+const GH_BASE = typeof GH_BASE !== 'undefined' ? GH_BASE : '';
+
+(function () {
   const params = new URLSearchParams(window.location.search);
-  const n = parseInt(params.get('p') || '1', 10);
+  const type = (params.get('type') || '').toLowerCase() === 'c' ? 'c' : 'p';
+  const n = parseInt(params.get('n') || params.get('p') || '1', 10);
 
   const projects = [
-    {
-      name: 'Ethical Hacking Essentials (EHE)',
-      file: 'assets/projects/Coursera 395DD9RQS4WI.pdf',
-      github: `${GH_BASE}/assets/projects/Coursera%20395DD9RQS4WI.pdf`,
-      summary: 'Overzicht van offensive en defensive technieken.',
-      tools: ['Kali Linux','Nmap','Wireshark','Metasploit']
-    },
-    {
-      name: 'Automate Cybersecurity Tasks with Python',
-      file: 'assets/projects/Coursera 4QJQQEIRNF1P.pdf',
-      github: `${GH_BASE}/assets/projects/Coursera%204QJQQEIRNF1P.pdf`,
-      summary: 'Automatiseren van securitytaken met Python: data, APIs, parsing en rapportage.',
-      tools: ['Python','Requests','JSON','Automation']
-    },
-    {
-      name: 'Python Basics',
-      file: 'assets/projects/Coursera NS5KLLJWBGLG.pdf',
-      github: `${GH_BASE}/assets/projects/Coursera%20NS5KLLJWBGLG.pdf`,
-      summary: 'Basis Python: syntax, variabelen en controlestructuren.',
-      tools: ['Python','Control Flow','Functions']
-    },
-    {
-      name: 'Google Cybersecurity',
-      file: 'assets/projects/Coursera TB5A7FIDNG6O (1).pdf',
-      github: `${GH_BASE}/assets/projects/Coursera%20TB5A7FIDNG6O%20%281%29.pdf`,
-      summary: 'Security fundamentals, SIEM/SOC-workflows en incidentrespons.',
-      tools: ['Linux','Networking','SIEM','Incident Response']
-    },
-    {
-      name: 'Tools of the Trade: Linux and SQL',
-      file: 'assets/projects/Coursera XCN49D2BVPZ7.pdf',
-      github: `${GH_BASE}/assets/projects/Coursera%20XCN49D2BVPZ7.pdf`,
-      summary: 'Linux CLI, permissies, services en basis SQL-queries.',
-      tools: ['Linux','Bash','SQL']
-    },
-    {
-      name: 'Technical Support Fundamentals',
-      file: 'assets/projects/Coursera YT47ZJIWH2LB.pdf',
-      github: `${GH_BASE}/assets/projects/Coursera%20YT47ZJIWH2LB.pdf`,
-      summary: 'Troubleshooting, netwerk- en OS-concepten, supportpraktijken.',
-      tools: ['Troubleshooting','OS','Networking']
-    }
+    { name:'Rekenmachine CLI', summary:'Python CLI-rekenmachine met functies en inputvalidatie.', tools:['Python'], github: GH_BASE, file:'' },
+    { name:'Log Parser & Alert Bot', summary:'Auth-/web-logs parsen met regex en alerts genereren.', tools:['Python','Regex','JSON'], github: GH_BASE, file:'' },
+    { name:'Network Recon Toolkit', summary:'Nmap en sockets; resultaten export naar CSV/HTML.', tools:['Nmap','Python','Sockets'], github: GH_BASE, file:'' },
+    { name:'SOC Incident Playbook', summary:'Playbooks voor triage en containment, helder en kort.', tools:['Docs','HTML5','Bootstrap'], github: GH_BASE, file:'' },
+    { name:'Linux + SQL Log ETL', summary:'Logs filteren en laden naar SQLite; basisqueries.', tools:['Linux','Bash','SQL'], github: GH_BASE, file:'' },
+    { name:'Support KB Mini-Site', summary:'Bootstrap mini-site met procedures en FAQ.', tools:['HTML5','Bootstrap'], github: GH_BASE, file:'' }
   ];
 
-  const idx = Math.min(Math.max(n, 1), projects.length) - 1;
-  const current = projects[idx];
+  const certs = [
+    { name:'Ethical Hacking Essentials (EHE)', summary:'Offensive en defensive technieken.', tools:['Kali Linux','Nmap','Wireshark','Metasploit'], github: GH_BASE, file:'assets/projects/Coursera 395DD9RQS4WI.pdf' },
+    { name:'Automate Cybersecurity Tasks with Python', summary:'Securitytaken automatiseren met Python.', tools:['Python','Requests','JSON','Automation'], github: GH_BASE, file:'assets/projects/Coursera 4QJQQEIRNF1P.pdf' },
+    { name:'Python Basics', summary:'Basis Python: syntax en control flow.', tools:['Python'], github: GH_BASE, file:'assets/projects/Coursera NS5KLLJWBGLG.pdf' },
+    { name:'Google Cybersecurity', summary:'Fundamentals, SIEM/SOC en incidentrespons.', tools:['Linux','Networking','SIEM'], github: GH_BASE, file:'assets/projects/Coursera TB5A7FIDNG6O (1).pdf' },
+    { name:'Tools of the Trade: Linux and SQL', summary:'Linux CLI en basis SQL.', tools:['Linux','Bash','SQL'], github: GH_BASE, file:'assets/projects/Coursera XCN49D2BVPZ7.pdf' },
+    { name:'Technical Support Fundamentals', summary:'Troubleshooting, netwerk en OS.', tools:['OS','Networking','Docs'], github: GH_BASE, file:'assets/projects/Coursera YT47ZJIWH2LB.pdf' }
+  ];
 
-  var el;
-  if (el = document.getElementById('projectTitle')) el.textContent = current.name;
-  if (el = document.getElementById('thumbTitle')) el.textContent = current.name;
-  if (el = document.getElementById('infoName')) el.textContent = current.name;
-  if (el = document.getElementById('infoDetails')) el.textContent = current.summary;
+  const data = (type === 'c') ? certs : projects;
+  const idx = Math.min(Math.max(n, 1), data.length) - 1;
+  const current = data[idx];
 
-  if (el = document.getElementById('demoBtn')) { el.href = current.file; el.setAttribute('download', ''); }
-  if (el = document.getElementById('githubBtn')) { el.href = current.github; el.target = '_blank'; el.rel = 'noopener'; }
-
-  const tech = document.getElementById('techList');
-  if (tech && Array.isArray(current.tools)) {
-    tech.innerHTML = '';
-    current.tools.forEach(t => {
-      const span = document.createElement('span');
-      span.className = 'badge rounded-pill badge-tech';
-      span.textContent = t;
-      tech.appendChild(span);
-    });
+  function setText(id, text) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
   }
+  function setBtn(id, href, download=false) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (href) {
+      el.href = href;
+      if (download) el.setAttribute('download','');
+      el.classList.remove('disabled');
+    } else {
+      el.href = '#';
+      el.removeAttribute('download');
+      el.classList.add('disabled');
+    }
+  }
+
+  setText('projectTitle', current.name);
+  setText('thumbTitle', current.name);
+  setText('infoName', current.name);
+  setText('infoDetails', (type === 'c') ? 'Certificaat' : 'Project');
+
+  setBtn('demoBtn', current.file || '', !!current.file);
+  setBtn('githubBtn', current.github || '', false);
 
   const ul = document.getElementById('relatedList');
   if (ul) {
     ul.innerHTML = '';
-    projects.forEach((p, i) => {
+    const list = data;
+    list.forEach((item, i) => {
       if (i === idx) return;
       const li = document.createElement('li');
       li.className = 'list-group-item d-flex justify-content-between align-items-center';
       const a = document.createElement('a');
-      a.href = 'naam.html?p=' + (i + 1);
-      a.textContent = p.name + ' — Certificaat';
+      a.href = 'naam.html?type=' + (type === 'c' ? 'c' : 'p') + '&n=' + (i+1);
+      a.textContent = item.name + (type === 'c' ? '' : ' — Details: Les ' + (i+1));
       li.appendChild(a);
       ul.appendChild(li);
     });
