@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="520" viewBox="0 0 2000 520">
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#E8C547" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+  <rect x="12" y="12" width="1976" height="496" rx="34" fill="none" stroke="#E8C547" stroke-width="10"/>
+  <!-- Shield -->
+  <g transform="translate(90,80)">
+    <path d="M180,0 L360,50 L360,200 C360,280 260,370 180,400 C100,370 0,280 0,200 L0,50 Z"
+          fill="#000000" stroke="#E8C547" stroke-width="10"/>
+    <!-- RJ45 pins -->
+    <rect x="70" y="60" width="220" height="90" rx="8" ry="8" fill="none" stroke="#E8C547" stroke-width="6"/>
+    <g stroke="#E8C547" stroke-width="5">
+      <line x1="90" y1="85" x2="90" y2="135"/>
+      <line x1="115" y1="85" x2="115" y2="135"/>
+      <line x1="140" y1="85" x2="140" y2="135"/>
+      <line x1="165" y1="85" x2="165" y2="135"/>
+      <line x1="190" y1="85" x2="190" y2="135"/>
+      <line x1="215" y1="85" x2="215" y2="135"/>
+      <line x1="240" y1="85" x2="240" y2="135"/>
+      <line x1="265" y1="85" x2="265" y2="135"/>
+    </g>
+    <!-- Network graph -->
+    <g stroke="#E8C547" stroke-width="6" fill="none">
+      <path d="M80,210 L150,160 L250,220 L300,290"/>
+      <path d="M100,300 L180,250 L260,320"/>
+    </g>
+    <g fill="#E8C547">
+      <circle cx="80" cy="210" r="11"/>
+      <circle cx="150" cy="160" r="11"/>
+      <circle cx="250" cy="220" r="11"/>
+      <circle cx="300" cy="290" r="11"/>
+      <circle cx="100" cy="300" r="11"/>
+      <circle cx="180" cy="250" r="11"/>
+      <circle cx="260" cy="320" r="11"/>
+    </g>
+    <!-- Initialen -->
+    <text x="95" y="360" font-size="96" font-weight="900"
+          font-family="Inter, Segoe UI, Roboto, Arial, sans-serif" fill="#E8C547">JOB</text>
+    <!-- Accent -->
+    <rect x="40" y="380" width="280" height="12" fill="#8A1C1C"/>
+  </g>
+  <!-- Naam -->
+  <g filter="url(#glow)">
+    <text x="500" y="245" font-size="200" font-weight="800" font-family="Inter, Segoe UI, Roboto, Arial, sans-serif" fill="#E8C547" letter-spacing="4">JORAN</text>
+  </g>
+  <text x="505" y="330" font-size="66" font-weight="600" font-family="Inter, Segoe UI, Roboto, Arial, sans-serif" fill="#E9E9E9" letter-spacing="2.5">OP DE BEECK</text>
+  <rect x="500" y="352" width="680" height="12" fill="#8A1C1C"/>
+</svg>

@@ -11,7 +11,7 @@
 }
 
 body {
-  background: var(--color-bg);
+  
   color: var(--color-text);
   font-family: var(--font-sans);
   line-height: 1.6;
@@ -153,3 +153,119 @@ img.rounded-xl { width: 100%; height: auto; }
 .container, .container-narrow { padding-left: 1rem; padding-right: 1rem; }
 
 .project-layout { flex-wrap: wrap; }
+
+
+/* Variant A — zichtbaarheid logo */
+.custom-nav{background:#000;border-bottom:1px solid rgba(232,197,71,.5)}
+.brand-badge{padding:.25rem .55rem;border:none;border-radius:0}
+.brand-logo{height:72px;width:auto;margin-right:.5rem;filter:drop-shadow(0 0 8px rgba(232,197,71,.85))}
+
+@media (max-width:576px){.brand-logo{height:56px}}
+.navbar-toggler{border-color:rgba(232,197,71,.6)}
+.navbar-toggler-icon{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(232,197,71,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")}
+
+/* === Readability & Background update === */
+:root{
+  --bg:#000;
+  --text:#E9E9E9;
+  --muted:#B3B7BF;
+  --gold:#E8C547;
+  --red:#8A1C1C;
+  --card:#0B0B0B;
+}
+
+html,body{height:100%}
+body{
+  background: var(--bg) url("../assets/images/bg-cyber-grid.svg") center/cover fixed no-repeat;
+  color: var(--text);
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,h2,h3,h4{color:#FFF;line-height:1.25;margin-bottom:.6rem;font-weight:800}
+p{color:var(--text);margin-bottom:1rem}
+.lead{color:#FFF;font-weight:700}
+
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline;color:#f5d96a}
+
+.container-narrow{max-width:980px}
+
+.custom-nav{
+  background: rgba(0,0,0,.78);
+  border-bottom: 1px solid rgba(232,197,71,.5);
+  backdrop-filter: blur(6px);
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid rgba(232,197,71,.5);
+  border-radius: 14px;
+  color: var(--text);
+  overflow: hidden;
+  box-shadow: 0 4px 22px rgba(0,0,0,.35);
+}
+
+
+.card-title{color:#FFF;font-weight:800}
+
+.footer{border-top:1px solid rgba(232,197,71,.45);padding:1.2rem 0;color:var(--muted)}
+
+
+
+
+
+
+.badge-tech{background:rgba(232,197,71,.18);color:var(--gold);border:1px solid rgba(232,197,71,.35);padding:.45rem .6rem}
+
+.project-thumb{background:#0b0b0b;padding:.75rem 1rem;font-weight:800;color:#FFF;border-bottom:1px solid rgba(232,197,71,.35)}
+
+/* Forms */
+form .form-control, form .form-select{
+  background:#0f0f0f;color:#E9E9E9;border:1px solid rgba(232,197,71,.35)
+}
+form .form-control:focus, form .form-select:focus{
+  border-color:var(--gold);box-shadow:0 0 0 .2rem rgba(232,197,71,.25)
+}
+
+/* Logo sizing (keuze v2) */
+.brand-logo{height:72px;width:auto;margin-right:.5rem;filter:drop-shadow(0 0 8px rgba(232,197,71,.85))}
+@media (max-width:576px){.brand-logo{height:56px}}
+
+
+/* Certificatenafbeeldingen vullen de kaart */
+
+
+
+
+/* Uniforme knoppen */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:800;letter-spacing:.2px;
+  border-radius:.6rem;padding:.75rem 1.15rem;line-height:1;transition:transform .05s ease, box-shadow .2s ease}
+.btn:active{transform:translateY(1px)}
+.btn-accent{background:#E8C547;color:#000;border:2px solid #E8C547}
+.btn-accent:hover{background:transparent;color:#E8C547}
+.btn-outline-light{border:2px solid #E8C547;color:#E8C547;background:transparent}
+.btn-outline-light:hover{background:#E8C547;color:#000}
+
+
+
+/* Certificatenafbeeldingen volledig zichtbaar */
+img.card-img-top
+
+
+/* Certificatenafbeeldingen: volledige zichtbaarheid, originele verhoudingen */
+img.card-img-top.cert-img{display:block;margin:0 auto;width:auto;max-width:100%;height:auto;object-fit:contain;background:#111;border-bottom:1px solid rgba(232,197,71,.35)}
+
+
+/* Rode watermark (subtiel, achter content) */
+/* Zorg dat content erboven ligt */
+
+/* copyright color */
+.footer > .container > div:first-child{color:#8A1C1C;font-weight:700}
+
+html,body{overflow-x:hidden}
+
+figure{margin:0} figure>img{display:block;margin:0 auto}
