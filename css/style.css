@@ -47,12 +47,19 @@ body {
 .btn-accent {
   border: 2px solid var(--color-accent);
   color: var(--color-accent);
-  background: transparent;
+  background: #000;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-weight: 700;
+  padding: .55rem 1.5rem;
+  border-radius: 999px;
   transition: all .2s ease-in-out;
 }
-.btn-accent:hover {
+.btn-accent:hover,
+.btn-accent:focus-visible {
   background: var(--color-accent);
   color: #000;
+  text-decoration: none;
 }
 
 .hero {
@@ -245,8 +252,8 @@ form .form-control:focus, form .form-select:focus{
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:800;letter-spacing:.2px;
   border-radius:.6rem;padding:.75rem 1.15rem;line-height:1;transition:transform .05s ease, box-shadow .2s ease}
 .btn:active{transform:translateY(1px)}
-.btn-accent{background:#E8C547;color:#000;border:2px solid #E8C547}
-.btn-accent:hover{background:transparent;color:#E8C547}
+.btn-accent{background:#000;color:#E8C547;border:2px solid #E8C547}
+.btn-accent:hover{background:#E8C547;color:#000}
 .btn-outline-light{border:2px solid #E8C547;color:#E8C547;background:transparent}
 .btn-outline-light:hover{background:#E8C547;color:#000}
 
@@ -269,3 +276,76 @@ img.card-img-top.cert-img{display:block;margin:0 auto;width:auto;max-width:100%;
 html,body{overflow-x:hidden}
 
 figure{margin:0} figure>img{display:block;margin:0 auto}
+
+
+
+/* Accent utilities */
+.border-accent {
+  border-color: rgba(232, 197, 71, 0.6) !important;
+}
+.text-accent {
+  color: var(--color-accent) !important;
+}
+
+/* Round icon buttons for social links */
+.btn-icon-circle {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* Contact map wrapper */
+.map-card {
+  height: 360px;
+  border: 1px solid rgba(232, 197, 71, 0.45);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0b0b0b;
+}
+
+/* Leaflet popup styling to match site colors */
+.map-popup .leaflet-popup-content-wrapper {
+  background: #000;
+  color: #E9E9E9;
+  border-radius: 10px;
+  border: 1px solid rgba(232, 197, 71, 0.85);
+}
+.map-popup .leaflet-popup-content {
+  margin: 0.75rem 1rem;
+}
+.map-popup .leaflet-popup-tip {
+  background: #000;
+  box-shadow: 0 0 0 1px rgba(232, 197, 71, 0.85);
+}
+
+.btn-icon-circle i { font-size: 1.3rem; }
+
+
+/* Custom map marker in site colors */
+.map-marker-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  border: 2px solid #000;
+  box-shadow: 0 0 8px rgba(232, 197, 71, 0.6);
+  position: relative;
+}
+
+.map-marker-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-width: 8px 5px 0 5px;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent;
+}

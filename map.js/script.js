@@ -6,14 +6,49 @@ const GH_BASE = typeof GH_BASE !== 'undefined' ? GH_BASE : '';
   const n = parseInt(params.get('n') || params.get('p') || '1', 10);
 
   const projects = [
-    { name:'Rekenmachine CLI', summary:'Python CLI-rekenmachine met functies en inputvalidatie.', tools:['Python'], github: GH_BASE, file:'' },
-    { name:'Log Parser & Alert Bot', summary:'Auth-/web-logs parsen met regex en alerts genereren.', tools:['Python','Regex','JSON'], github: GH_BASE, file:'' },
-    { name:'Network Recon Toolkit', summary:'Nmap en sockets; resultaten export naar CSV/HTML.', tools:['Nmap','Python','Sockets'], github: GH_BASE, file:'' },
-    { name:'SOC Incident Playbook', summary:'Playbooks voor triage en containment, helder en kort.', tools:['Docs','HTML5','Bootstrap'], github: GH_BASE, file:'' },
-    { name:'Linux + SQL Log ETL', summary:'Logs filteren en laden naar SQLite; basisqueries.', tools:['Linux','Bash','SQL'], github: GH_BASE, file:'' },
-    { name:'Support KB Mini-Site', summary:'Bootstrap mini-site met procedures en FAQ.', tools:['HTML5','Bootstrap'], github: GH_BASE, file:'' }
-  ];
-
+  {
+    name: 'Ethical Hacking Essentials — praktijklab',
+    summary: 'In dit project oefende ik de basis van ethical hacking: informatievergaring, netwerkverkenning, poort- en servicescans en het analyseren van eenvoudige kwetsbaarheden in een veilige lab-omgeving.',
+    tools: ['Kali Linux', 'Nmap', 'Wireshark', 'Metasploit'],
+    github: GH_BASE,
+    file: ''
+  },
+  {
+    name: 'Automate Cybersecurity Tasks with Python',
+    summary: 'Met dit project automatiseerde ik cybersecuritytaken: logbestanden inlezen, verdachte patronen filteren en eenvoudige alerts genereren met Python-scripts.',
+    tools: ['Python', 'Regex', 'JSON', 'Loganalyse'],
+    github: GH_BASE,
+    file: ''
+  },
+  {
+    name: 'Python Basics — fundamenten',
+    summary: 'Hier bouwde ik kleine consoletools om de basis van Python te oefenen: variabelen, controlestructuren (if/else), lussen, functies en het werken met lijsten en dictionaries.',
+    tools: ['Python', 'VS Code', 'Git'],
+    github: GH_BASE,
+    file: ''
+  },
+  {
+    name: 'Google Cybersecurity — SOC mindset',
+    summary: 'Dit project focust op het denkproces van een SOC-analist: alerts interpreteren, risico inschatten, eenvoudige incident-playbooks opstellen en bevindingen rapporteren.',
+    tools: ['SOC-concepten', 'Incident response', 'Playbooks', 'Rapportering'],
+    github: GH_BASE,
+    file: ''
+  },
+  {
+    name: 'Linux & SQL — loganalyse',
+    summary: 'In dit project combineerde ik Linux-commands en SQL-queries om logdata te filteren, te groeperen en te analyseren, met focus op het herkennen van afwijkende activiteiten.',
+    tools: ['Linux', 'Bash', 'SQL', 'Logbestanden'],
+    github: GH_BASE,
+    file: ''
+  },
+  {
+    name: 'Technical Support Fundamentals — cases',
+    summary: 'Deze cases draaien rond hardware-, software- en netwerkproblemen, met nadruk op gestructureerd troubleshooten en duidelijke, klantgerichte communicatie.',
+    tools: ['Windows', 'Linux', 'Troubleshooting', 'Documentatie'],
+    github: GH_BASE,
+    file: ''
+  }
+];
   const certs = [
     { name:'Ethical Hacking Essentials (EHE)', summary:'Offensive en defensive technieken.', tools:['Kali Linux','Nmap','Wireshark','Metasploit'], github: GH_BASE, file:'assets/projects/Coursera 395DD9RQS4WI.pdf' },
     { name:'Automate Cybersecurity Tasks with Python', summary:'Securitytaken automatiseren met Python.', tools:['Python','Requests','JSON','Automation'], github: GH_BASE, file:'assets/projects/Coursera 4QJQQEIRNF1P.pdf' },
@@ -48,11 +83,9 @@ const GH_BASE = typeof GH_BASE !== 'undefined' ? GH_BASE : '';
   setText('projectTitle', current.name);
   setText('thumbTitle', current.name);
   setText('infoName', current.name);
-  setText('infoDetails', (type === 'c') ? 'Certificaat' : 'Project');
+  setText('infoDetails', current.summary || ((type === 'c') ? 'Certificaat' : 'Project'));
 
   setBtn('demoBtn', current.file || '', !!current.file);
-  setBtn('githubBtn', current.github || '', false);
-
   const ul = document.getElementById('relatedList');
   if (ul) {
     ul.innerHTML = '';
