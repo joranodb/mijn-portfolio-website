@@ -249,6 +249,7 @@ form .form-control:focus, form .form-select:focus{
 
 
 
+
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:800;letter-spacing:.2px;
   border-radius:.6rem;padding:.75rem 1.15rem;line-height:1;transition:transform .05s ease, box-shadow .2s ease}
 .btn:active{transform:translateY(1px)}
@@ -263,14 +264,13 @@ form .form-control:focus, form .form-select:focus{
 img.card-img-top
 
 
-/* Certificatenafbeeldingen: volledige zichtbaarheid, originele verhoudingen */
+/
 img.card-img-top.cert-img{display:block;margin:0 auto;width:auto;max-width:100%;height:auto;object-fit:contain;background:#111;border-bottom:1px solid rgba(232,197,71,.35)}
 
 
-/* Rode watermark (subtiel, achter content) */
-/* Zorg dat content erboven ligt */
 
-/* copyright color */
+
+
 .footer > .container > div:first-child{color:#8A1C1C;font-weight:700}
 
 html,body{overflow-x:hidden}
@@ -279,7 +279,7 @@ figure{margin:0} figure>img{display:block;margin:0 auto}
 
 
 
-/* Accent utilities */
+
 .border-accent {
   border-color: rgba(232, 197, 71, 0.6) !important;
 }
@@ -287,7 +287,7 @@ figure{margin:0} figure>img{display:block;margin:0 auto}
   color: var(--color-accent) !important;
 }
 
-/* Round icon buttons for social links */
+
 .btn-icon-circle {
   width: 3rem;
   height: 3rem;
@@ -299,7 +299,7 @@ figure{margin:0} figure>img{display:block;margin:0 auto}
   font-weight: 700;
 }
 
-/* Contact map wrapper */
+
 .map-card {
   height: 360px;
   border: 1px solid rgba(232, 197, 71, 0.45);
@@ -308,7 +308,7 @@ figure{margin:0} figure>img{display:block;margin:0 auto}
   background: #0b0b0b;
 }
 
-/* Leaflet popup styling to match site colors */
+
 .map-popup .leaflet-popup-content-wrapper {
   background: #000;
   color: #E9E9E9;
@@ -326,7 +326,7 @@ figure{margin:0} figure>img{display:block;margin:0 auto}
 .btn-icon-circle i { font-size: 1.3rem; }
 
 
-/* Custom map marker in site colors */
+
 .map-marker-icon {
   width: 26px;
   height: 26px;
