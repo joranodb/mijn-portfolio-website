@@ -238,7 +238,7 @@ form .form-control:focus, form .form-select:focus{
   border-color:var(--gold);box-shadow:0 0 0 .2rem rgba(232,197,71,.25)
 }
 
-/* Logo sizing (keuze v2) */
+
 .brand-logo{height:72px;width:auto;margin-right:.5rem;filter:drop-shadow(0 0 8px rgba(232,197,71,.85))}
 @media (max-width:576px){.brand-logo{height:56px}}
 
